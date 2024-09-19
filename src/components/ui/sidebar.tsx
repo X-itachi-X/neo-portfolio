@@ -146,6 +146,7 @@ export const MobileSidebar = ({
               >
                 <IconX />
               </div>
+              
               {children}
             </motion.div>
           )}
