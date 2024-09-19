@@ -52,7 +52,7 @@ const page = () => {
                 <div className="flex flex-row">
                   <div className="relative top-5 left-0 w-fit">
                    <div className="text-2xl md:text-7xl font-bold dark:text-white w-fit">
-                     Hi, I'm Ankit, a Software Developer based in India.
+                     Hi, I&apos;m Ankit, a Software Developer based in India.
                    </div>
                   <div className="font-extralight text-base md:text-4xl dark:text-neutral-200 py-4">
                     And this, is my Portfolio.
