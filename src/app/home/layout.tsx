@@ -14,7 +14,6 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
 import icon from "@/assets/WhatsApp Image 2023-01-18 at 18.43.50(1).jpg"
-import { AuroraBackground } from "@/components/ui/aurora-background";
 import { TerminalIcon } from "lucide-react";
 
 export default function HomeLayout({
