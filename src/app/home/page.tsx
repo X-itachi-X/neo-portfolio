@@ -37,7 +37,7 @@ const page = () => {
           </div>
           <div className="flex gap-2 flex-1 overflow-y-auto rounded-xl">
            
-              <div className="h-full w-full rounded-lg  bg-gray-100 dark:bg-neutral-800 overflow-y-auto" >
+              <div className="h-full w-full rounded-lg  bg-gray-100 dark:bg-neutral-800 overflow-y-auto hidden md:block" >
               <AuroraBackground>
                 <motion.div
                   initial={{ opacity: 0.0, y: 40 }}
@@ -90,6 +90,9 @@ const page = () => {
                   
                 </motion.div>
               </AuroraBackground>
+              </div>
+              <div>
+
               </div>
            
           </div>
