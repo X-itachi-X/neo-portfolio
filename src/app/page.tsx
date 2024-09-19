@@ -1,8 +1,8 @@
 "use client"
 import { BackgroundBeamsWithCollision } from "@/components/ui/background-beams-with-collision";
-import Image from "next/image";
+
 import { useState } from "react";
-import HomeLayout from "./home/layout";
+
 import { TypewriterEffectSmooth } from "@/components/ui/typewriter-effect";
 import { useRouter } from "next/navigation";
 
