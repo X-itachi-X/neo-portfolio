@@ -4,7 +4,6 @@ import { Sidebar, SidebarBody, SidebarLink } from "@/components/ui/sidebar";
 import {
   IconBrandGoogleHome,
   IconBriefcaseFilled,
-  IconArrowLeft,
   IconCertificate,
   IconSettingsCheck,
   IconTrophyFilled,
