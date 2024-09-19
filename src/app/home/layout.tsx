@@ -18,9 +18,9 @@ import { TerminalIcon } from "lucide-react";
 
 export default function HomeLayout({
     children,
-}:{
-    children: React.ReactNode;
-}) {
+}:Readonly<{
+  children: React.ReactNode;
+}>) {
     const links = [
         {
           label: "Homepage",
