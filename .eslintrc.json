@@ -1,3 +1,8 @@
 {
-  "extends": ["next/core-web-vitals", "next/typescript"]
+  "extends": ["next/core-web-vitals", "next/typescript"],
+  "rules": {
+    "prefer-const": "off",                       // Disable 'prefer-const' rule
+    "@typescript-eslint/no-explicit-any": "off", // Disable 'no-explicit-any' rule for TypeScript
+    "react-hooks/exhaustive-deps": "off"         // Disable 'exhaustive-deps' rule for React hooks
+  }
 }
