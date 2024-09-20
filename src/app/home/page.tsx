@@ -2,7 +2,7 @@
 import { AuroraBackground } from "@/components/ui/aurora-background";
 import { AnimatePresence, motion } from "framer-motion";
 import Image from "next/image";
-import React, { useEffect } from "react";
+import React from "react";
 import { HeroHighlight, Highlight } from "@/components/ui/hero-highlight";
 import pic from "@/assets/WhatsApp_Image_2023-01-18_at_18.43.50_1_-removebg.png"
 import { SiNextdotjs } from "react-icons/si";
@@ -22,9 +22,9 @@ import { FaLinux } from "react-icons/fa";
 import { FloatingDock } from "@/components/ui/floating-dock";
 import {
   IconBrandGithub,
-  IconExchange,
+  
   IconHome,
-  IconNewSection,
+  
   IconTerminal2,
 } from "@tabler/icons-react";
 import {
@@ -373,7 +373,7 @@ const page = () => {
                   
                   with a flair for creating visually stunning, user-friendly web applications, I bring ideas to life through code.</div><br/>
                   <Highlight className="text-black dark:text-white">
-                  Let's turn your vision into reality!
+                  Let&apos;s turn your vision into reality!
                   </Highlight>
                 </motion.h1>
               </HeroHighlight>
