@@ -240,9 +240,9 @@ const page = () => {
                          
                           <div className="h-[80rem] w-full grid grid-cols-2 z-0" >
                             <ProjectCard title="google.com" link="https://www.google.com" data={project1}/>
-                            <ProjectCard title="google.com" link="https://www.google.com" data={project1}/>
-                            <ProjectCard title="google.com" link="https://www.google.com" data={project1}/>
-                            <ProjectCard title="google.com" link="https://www.google.com" data={project1}/>
+                            <ProjectCard title="google.com" link="https://www.google.com" data={project2}/>
+                            <ProjectCard title="google.com" link="https://www.google.com" data={project3}/>
+                            <ProjectCard title="google.com" link="https://www.google.com" data={project4}/>
                           </div>
                           <Link href="/home/projects">
                           

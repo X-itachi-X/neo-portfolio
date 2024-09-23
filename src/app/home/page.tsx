@@ -48,7 +48,6 @@ import {
   IconSend,
   IconBrandDocker,
   IconBrandVscode,
-  IconMessageFilled
 } from "@tabler/icons-react";
 import { CanvasRevealEffect } from "@/components/ui/canvas-reveal-effect";
 import { BackgroundGradient } from "@/components/ui/background-gradient";
@@ -522,9 +521,9 @@ const page = () => {
                           Highlighted Projects
                           <div className="h-[80rem] w-full grid grid-cols-2 z-0" >
                             <ProjectCard title="google.com" link="https://www.google.com" data={project1}/>
-                            <ProjectCard title="google.com" link="https://www.google.com" data={project1}/>
-                            <ProjectCard title="google.com" link="https://www.google.com" data={project1}/>
-                            <ProjectCard title="google.com" link="https://www.google.com" data={project1}/>
+                            <ProjectCard title="google.com" link="https://www.google.com" data={project2}/>
+                            <ProjectCard title="google.com" link="https://www.google.com" data={project3}/>
+                            <ProjectCard title="google.com" link="https://www.google.com" data={project4}/>
                           </div>
                           <Link href="/home/projects">
                           <button className="p-[3px] relative w-fit mt-10 mb-[8rem] ml-[4rem] text-base">
