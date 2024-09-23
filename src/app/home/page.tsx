@@ -283,7 +283,7 @@ const page = () => {
                     <div className="font-extralight text-base md:text-4xl dark:text-neutral-200 py-4">
                       And this, is my Portfolio.
                     </div>
-                    <div className="flex flex-row">
+                    <div className="grid grid-cols-3 md:flex md:flex-row">
                       <IconBrandGithubFilled size={70} color="white" className="mx-3 "/>
                       <IconBrandLinkedin size={70} color="white" className="mx-3"/>
                       <IconMailFilled size={70} color="white" className="mx-3"/>
@@ -320,10 +320,10 @@ const page = () => {
                       {/* key skills */}
                         <div id="skills" className="text-2xl md:text-4xl font-bold dark:text-white h-fit w-full border-4">
                           Key Skills
-                          <div className="flex flex-row xl:block border-4 border-red-400 w-fit xl:w-full items-center">
+                          <div className="border-4 border-red-400 w-fit xl:w-full items-center grid grid-cols-3 gap-8 md:grid-cols-5 mx-auto xl:block">
                               <div className="rounded-3xl py-4 my-4 xl:p-4 xl:m-4 flex flex-col xl:flex-row backdrop-blur-2xl z-0">
-                                  <BackgroundGradient className="rounded-[22px] w-[2rem] md:w-[4rem] mx-auto xl:w-[15rem] h-[10rem] xl:h-[14rem] max-w-sm flex flex-col justify-center items-center">
-                                    <IconFileCode2  className="h-8 w-8 md:h-[3rem] md:w-[3rem] xl:h-[6.25rem] xl:w-[6.25rem]" color="white" />
+                                  <BackgroundGradient className="rounded-[22px] w-fit mx-auto xl:w-[15rem] h-[10rem] xl:h-[14rem] max-w-sm flex flex-col justify-center items-center">
+                                    <IconFileCode2 size={100} color="white" />
                                     <div className="text-xs xl:text-2xl xl:mt-4">Languages</div>
                                     
                                   
