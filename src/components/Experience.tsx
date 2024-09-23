@@ -72,17 +72,18 @@ const Experience = () => {
   return (
     
 
-    <div className="mt-12 gap-10 grid grid-cols-4">
+    <div className="mt-12 gap-10 w-full md:grid grid-cols-1 lg:grid-cols-4 md:mr-3 ">
         {workExperience.map((card)=> (
+          
             <Button
             key={card.id}
             duration={Math.floor(Math.random() * 10000) + 10000}
             borderRadius='1.75rem'
-            className='flex-1 text-white border-neutral-200 dark:border-slate-800 p-10 w-full'
+            className='flex-1 text-white border-neutral-200 dark:border-slate-800 md:p-10 w-[90vw] md:w-full'
             >
-                <div className='flex lg:flex-row flex-col lg:items-center p-3 py-6 md:p-5 lg:p-10 gap-2 w-full'>
+                <div className='flex 2xl:flex-row flex-col  items-center p-3 py-6 md:p-5 lg:p-10 gap-2 w-full'>
                 <Image src={card.thumbnail} alt="img" width={240} height={240}/>
-                    <div className="w-full">
+                    <div className="w-full pl-10 md:pl-0">
                     <h1 className="text-start text-xl md:text-2xl font-bold">{card.title}</h1>
                     <p className="text-start text-white-100 mt-3 font-semibold">
                         <p className="italic"><em>{card.date}</em></p><br/>
@@ -97,6 +98,8 @@ const Experience = () => {
 
                 </div>
             </Button>
+            
+          
         ))}
     </div>
 
