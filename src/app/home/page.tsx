@@ -724,14 +724,10 @@ const ProjectCard = (
   {
     title,
     link,
-    icon,
-    children,
     data
   }: {
     title: string;
-    icon?: React.ReactNode;
     link: string;
-    children?: React.ReactNode;
     data: Array<any>;
   }
 ) => {
