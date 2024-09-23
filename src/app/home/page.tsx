@@ -352,7 +352,7 @@ const page = () => {
                                       containerClassName="bg-blue-400"
                                     />
                                   </Card>
-                                  <Card title="" icon={<VscBlank size={100} className="hidden md:block"/>}>
+                                  <Card title="" icon={<VscBlank size={100} />}>
                                     <CanvasRevealEffect
                                       animationSpeed={5.1}
                                       containerClassName="bg-red-400"
@@ -390,7 +390,7 @@ const page = () => {
                                       containerClassName="bg-blue-400"
                                     />
                                   </Card>
-                                  <Card title="" icon={<VscBlank size={100} className="hidden md:block"/>}>
+                                  <Card title="" icon={<VscBlank size={100} />}>
                                     <CanvasRevealEffect
                                       animationSpeed={5.1}
                                       containerClassName="bg-red-400"
@@ -428,7 +428,7 @@ const page = () => {
                                       containerClassName="bg-green-400"
                                     />
                                   </Card>
-                                  <Card title="" icon={<VscBlank size={100} className="hidden md:block"/>}>
+                                  <Card title="" icon={<VscBlank size={100} />}>
                                     <CanvasRevealEffect
                                       animationSpeed={5.1}
                                       containerClassName="bg-red-400"
@@ -454,19 +454,19 @@ const page = () => {
                                       containerClassName="bg-cyan-700"
                                     />
                                   </Card>
-                                  <Card title="" icon={<VscBlank size={100} className="hidden md:block"/>}>
+                                  <Card title="" icon={<VscBlank size={100} />}>
                                     <CanvasRevealEffect
                                       animationSpeed={5.1}
                                       containerClassName="bg-red-400"
                                     />
                                   </Card>
-                                  <Card title="" icon={<VscBlank size={100} className="hidden md:block"/>}>
+                                  <Card title="" icon={<VscBlank size={100} />}>
                                     <CanvasRevealEffect
                                       animationSpeed={5.1}
                                       containerClassName="bg-red-400"
                                     />
                                   </Card>
-                                  <Card title="" icon={<VscBlank size={100} className="hidden md:block"/>}>
+                                  <Card title="" icon={<VscBlank size={100} />}>
                                     <CanvasRevealEffect
                                       animationSpeed={5.1}
                                       containerClassName="bg-red-400"
@@ -505,7 +505,7 @@ const page = () => {
                                       containerClassName="bg-indigo-400"
                                     />
                                   </Card>
-                                  <Card title="" icon={<VscBlank size={100} className="hidden md:block"/>}>
+                                  <Card title="" icon={<VscBlank size={100} />}>
                                     <CanvasRevealEffect
                                       animationSpeed={5.1}
                                       containerClassName="bg-red-400"
@@ -514,7 +514,7 @@ const page = () => {
                                   
                               </div>
                           </div>
-                              <Link href="/home/skills">
+                              <Link href="/home/skills" className="hidden md:block">
                               <button className="p-[3px] relative w-fit mt-10 ml-[4rem] mb-[8rem] text-base">
                                 <div className="absolute inset-0 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-lg" />
                                 <div className="px-8 py-2  bg-black rounded-[6px]  relative group transition duration-200 text-white hover:bg-transparent">
@@ -616,7 +616,7 @@ const Card = ({
     <div
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
-      className="border border-black/[0.2] group/canvas-card flex items-center justify-center dark:border-white/[0.2]  max-w-sm mx-auto md:p-4 w-fit h-fit md:h-[14rem] md:w-[10rem] relative"
+      className="border border-black/[0.2] group/canvas-card flex items-center justify-center dark:border-white/[0.2]  max-w-sm mx-auto md:p-4 w-[8rem] h-[10rem] md:h-[14rem] md:w-[10rem] relative"
     >
       <Icon className="absolute h-6 w-6 -top-3 -left-3 dark:text-white text-black" />
       <Icon className="absolute h-6 w-6 -bottom-3 -left-3 dark:text-white text-black" />
