@@ -2,9 +2,11 @@
 import { AuroraBackground } from "@/components/ui/aurora-background";
 import { motion } from "framer-motion";
 import React from "react";
-import { HeroHighlight, Highlight } from "@/components/ui/hero-highlight";
-import { World } from "@/components/ui/globe";
+import dynamic from "next/dynamic";
 
+const World = dynamic(() => import('@/components/ui/globe'), {
+  ssr: false,
+});
 
 const page = () => {
   const globeConfig = {
@@ -451,41 +453,7 @@ const page = () => {
                 </div>
                 
               </div>
-           {/* //Small Screen HomePage */}
-              <div className="md:hidden">
-              <HeroHighlight>
-                <motion.h1
-                  initial={{
-                    opacity: 0,
-                    y: 20,
-                  }}
-                  animate={{
-                    opacity: 1,
-                    y: [20, -5, 0],
-                  }}
-                  transition={{
-                    duration: 0.5,
-                    ease: [0.4, 0.0, 0.2, 1],
-                  }}
-                  className="text-2xl px-4 md:text-4xl lg:text-5xl font-bold text-neutral-700 dark:text-white max-w-4xl leading-relaxed lg:leading-snug  mx-auto]"
-                >
-                  <h2 className="text-3xl">
-                   Hi, I am{" "}
-                  <Highlight className="text-black dark:text-white">
-                    Ankit Prakash!
-                  </Highlight></h2>
-                  <br/>
-                  <div className=" text-base">
-                  A passionate 
-                  <Highlight className="text-black dark:text-white">Full-Stack Developer</Highlight>
-                  
-                  with a flair for creating visually stunning, user-friendly web applications, I bring ideas to life through code.</div><br/>
-                  <Highlight className="text-black dark:text-white">
-                  Let&apos;s turn your vision into reality!
-                  </Highlight>
-                </motion.h1>
-              </HeroHighlight>
-              </div>
+          
            
           </div>
            
