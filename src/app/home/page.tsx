@@ -20,6 +20,7 @@ import { SiKubernetes } from "react-icons/si";
 import { FaGitAlt } from "react-icons/fa6";
 import { FaLinux } from "react-icons/fa";
 import { FloatingDock } from "@/components/ui/floating-dock";
+import { AnimatedTooltip } from "@/components/ui/animated-tooltip";
 import {
   IconBrandGithub,
   
@@ -44,16 +45,195 @@ import {
   IconBrandJavascript,
   IconBrandTypescript,
   IconBrandCpp,
+  IconSend,
   IconBrandDocker,
   IconBrandVscode,
   IconMessageFilled
 } from "@tabler/icons-react";
 import { CanvasRevealEffect } from "@/components/ui/canvas-reveal-effect";
 import { BackgroundGradient } from "@/components/ui/background-gradient";
+import { PinContainer } from "@/components/ui/3d-pin";
+import Link from "next/link";
+import Experience from "@/components/Experience";
+
 
 const page = () => {
-  
-  
+  const project1 = [
+    {
+      id: 1,
+      name: "John Doe",
+      designation: "Software Engineer",
+      image:
+        "https://images.unsplash.com/photo-1599566150163-29194dcaad36?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3387&q=80",
+    },
+    {
+      id: 2,
+      name: "Robert Johnson",
+      designation: "Product Manager",
+      image:
+        "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YXZhdGFyfGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60",
+    },
+    {
+      id: 3,
+      name: "Jane Smith",
+      designation: "Data Scientist",
+      image:
+        "https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8YXZhdGFyfGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60",
+    },
+    {
+      id: 4,
+      name: "Emily Davis",
+      designation: "UX Designer",
+      image:
+        "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGF2YXRhcnxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60",
+    },
+    {
+      id: 5,
+      name: "Tyler Durden",
+      designation: "Soap Developer",
+      image:
+        "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3540&q=80",
+    },
+    {
+      id: 6,
+      name: "Dora",
+      designation: "The Explorer",
+      image:
+        "https://images.unsplash.com/photo-1544725176-7c40e5a71c5e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3534&q=80",
+    },
+  ];
+  const project2 = [
+    {
+      id: 1,
+      name: "John Doe",
+      designation: "Software Engineer",
+      image:
+        "https://images.unsplash.com/photo-1599566150163-29194dcaad36?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3387&q=80",
+    },
+    {
+      id: 2,
+      name: "Robert Johnson",
+      designation: "Product Manager",
+      image:
+        "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YXZhdGFyfGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60",
+    },
+    {
+      id: 3,
+      name: "Jane Smith",
+      designation: "Data Scientist",
+      image:
+        "https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8YXZhdGFyfGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60",
+    },
+    {
+      id: 4,
+      name: "Emily Davis",
+      designation: "UX Designer",
+      image:
+        "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGF2YXRhcnxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60",
+    },
+    {
+      id: 5,
+      name: "Tyler Durden",
+      designation: "Soap Developer",
+      image:
+        "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3540&q=80",
+    },
+    {
+      id: 6,
+      name: "Dora",
+      designation: "The Explorer",
+      image:
+        "https://images.unsplash.com/photo-1544725176-7c40e5a71c5e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3534&q=80",
+    },
+  ];
+  const project3 = [
+    {
+      id: 1,
+      name: "John Doe",
+      designation: "Software Engineer",
+      image:
+        "https://images.unsplash.com/photo-1599566150163-29194dcaad36?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3387&q=80",
+    },
+    {
+      id: 2,
+      name: "Robert Johnson",
+      designation: "Product Manager",
+      image:
+        "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YXZhdGFyfGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60",
+    },
+    {
+      id: 3,
+      name: "Jane Smith",
+      designation: "Data Scientist",
+      image:
+        "https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8YXZhdGFyfGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60",
+    },
+    {
+      id: 4,
+      name: "Emily Davis",
+      designation: "UX Designer",
+      image:
+        "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGF2YXRhcnxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60",
+    },
+    {
+      id: 5,
+      name: "Tyler Durden",
+      designation: "Soap Developer",
+      image:
+        "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3540&q=80",
+    },
+    {
+      id: 6,
+      name: "Dora",
+      designation: "The Explorer",
+      image:
+        "https://images.unsplash.com/photo-1544725176-7c40e5a71c5e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3534&q=80",
+    },
+  ];
+  const project4 = [
+    {
+      id: 1,
+      name: "John Doe",
+      designation: "Software Engineer",
+      image:
+        "https://images.unsplash.com/photo-1599566150163-29194dcaad36?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3387&q=80",
+    },
+    {
+      id: 2,
+      name: "Robert Johnson",
+      designation: "Product Manager",
+      image:
+        "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YXZhdGFyfGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60",
+    },
+    {
+      id: 3,
+      name: "Jane Smith",
+      designation: "Data Scientist",
+      image:
+        "https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8YXZhdGFyfGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60",
+    },
+    {
+      id: 4,
+      name: "Emily Davis",
+      designation: "UX Designer",
+      image:
+        "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGF2YXRhcnxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60",
+    },
+    {
+      id: 5,
+      name: "Tyler Durden",
+      designation: "Soap Developer",
+      image:
+        "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3540&q=80",
+    },
+    {
+      id: 6,
+      name: "Dora",
+      designation: "The Explorer",
+      image:
+        "https://images.unsplash.com/photo-1544725176-7c40e5a71c5e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3534&q=80",
+    },
+  ];
   
   return (
     <div className="flex w-full">
@@ -75,6 +255,7 @@ const page = () => {
               </div>
             
           </div>
+        {/* Content */}
           <div className=" gap-2 h-[60vh] flex-1 rounded-xl overflow-y-auto  bg-white dark:bg-neutral-900">
            {/* //Big Screen HomePage */}
               
@@ -111,12 +292,14 @@ const page = () => {
                       <IconBrandYoutubeKids size={70} color="white" className="mx-3"/>
                       <IconFileTypePdf size={70} color="white" className="mx-3"/>
                     </div>
-                    <button className="p-[3px] relative w-fit mt-[10rem] ml-[4rem]">
+                    <Link href="/home/timeline">
+                    <button className="p-[3px] relative w-fit mt-10 ml-[4rem]">
                       <div className="absolute inset-0 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-lg" />
                       <div className="px-8 py-2  bg-black rounded-[6px]  relative group transition duration-200 text-white hover:bg-transparent">
-                        Lit up borders
+                       View My Timeline
                       </div>
                     </button>
+                    </Link>
                     </div>
                     
                     <Image
@@ -131,212 +314,236 @@ const page = () => {
                     
                     <div>
                       {/* key skills */}
-                    <div id="skills" className="text-2xl md:text-4xl font-bold dark:text-white h-fit w-full">
-                      Key Skills
-                      <div className="rounded-3xl p-4 m-4 flex flex-row backdrop-blur-2xl">
-                              <BackgroundGradient className="rounded-[22px] w-[15rem] h-[14rem] max-w-sm p-4 sm:p-10 flex flex-col justify-center items-center">
-                                <IconFileCode2 size={100} color="white" />
-                                <div className="text-2xl mt-4">Languages</div>
-                                
-                              
-                              </BackgroundGradient>
-                              <Card title="I know Javacript Very Well" icon={<IconBrandJavascript size={100} />}>
-                                <CanvasRevealEffect
-                                  animationSpeed={5.1}
-                                  containerClassName="bg-yellow-700"
-                                />
-                              </Card>
-                              <Card title="I Know TypeScript Very Well" icon={<IconBrandTypescript size={100} />}>
-                                <CanvasRevealEffect
-                                  animationSpeed={5.1}
-                                  containerClassName="bg-blue-400"
-                                />
-                              </Card>
-                              <Card title="I know Java Very Well" icon={<FaJava size={100} />}>
-                                <CanvasRevealEffect
-                                  animationSpeed={5.1}
-                                  containerClassName="bg-yellow-600"
-                                />
-                              </Card>
-                              <Card title="I know C++ Very Well" icon={<IconBrandCpp size={100} />}>
-                                <CanvasRevealEffect
-                                  animationSpeed={5.1}
-                                  containerClassName="bg-blue-400"
-                                />
-                              </Card>
-                              <Card title="" icon={<VscBlank size={100} />}>
-                                <CanvasRevealEffect
-                                  animationSpeed={5.1}
-                                  containerClassName="bg-red-400"
-                                />
-                              </Card>
+                        <div id="skills" className="text-2xl md:text-4xl font-bold dark:text-white h-fit w-full">
+                          Key Skills
+                          <div className="rounded-3xl p-4 m-4 flex flex-row backdrop-blur-2xl z-0">
+                                  <BackgroundGradient className="rounded-[22px] w-[15rem] h-[14rem] max-w-sm p-4 sm:p-10 flex flex-col justify-center items-center">
+                                    <IconFileCode2 size={100} color="white" />
+                                    <div className="text-2xl mt-4">Languages</div>
+                                    
+                                  
+                                  </BackgroundGradient>
+                                  <Card title="I know Javacript Very Well" icon={<IconBrandJavascript size={100} />}>
+                                    <CanvasRevealEffect
+                                      animationSpeed={5.1}
+                                      containerClassName="bg-yellow-700"
+                                    />
+                                  </Card>
+                                  <Card title="I Know TypeScript Very Well" icon={<IconBrandTypescript size={100} />}>
+                                    <CanvasRevealEffect
+                                      animationSpeed={5.1}
+                                      containerClassName="bg-blue-400"
+                                    />
+                                  </Card>
+                                  <Card title="I know Java Very Well" icon={<FaJava size={100} />}>
+                                    <CanvasRevealEffect
+                                      animationSpeed={5.1}
+                                      containerClassName="bg-yellow-600"
+                                    />
+                                  </Card>
+                                  <Card title="I know C++ Very Well" icon={<IconBrandCpp size={100} />}>
+                                    <CanvasRevealEffect
+                                      animationSpeed={5.1}
+                                      containerClassName="bg-blue-400"
+                                    />
+                                  </Card>
+                                  <Card title="" icon={<VscBlank size={100} />}>
+                                    <CanvasRevealEffect
+                                      animationSpeed={5.1}
+                                      containerClassName="bg-red-400"
+                                    />
+                                  </Card>
+                              </div>
+                              <div className="rounded-3xl p-4 m-4 flex flex-row backdrop-blur-2xl z-0">
+                                  <BackgroundGradient className="rounded-[22px] w-[15rem] h-[14rem] max-w-sm p-4 sm:p-10 flex flex-col justify-center items-center">
+                                    <IconStackFront size={100} color="white" />
+                                    <div className="text-2xl mt-4">Front-End Key Skills</div>
+                                    
+                                  
+                                  </BackgroundGradient>
+                                  <Card title="I know React Very Well" icon={<IconBrandReact size={100} />}>
+                                    <CanvasRevealEffect
+                                      animationSpeed={5.1}
+                                      containerClassName="bg-blue-700"
+                                    />
+                                  </Card>
+                                  <Card title="I Know Next.Js Very Well" icon={<SiNextdotjs size={100} />}>
+                                    <CanvasRevealEffect
+                                      animationSpeed={5.1}
+                                      containerClassName="bg-slate-900"
+                                    />
+                                  </Card>
+                                  <Card title="I know Redux Very Well" icon={<IconBrandRedux size={100} />}>
+                                    <CanvasRevealEffect
+                                      animationSpeed={5.1}
+                                      containerClassName="bg-purple-600"
+                                    />
+                                  </Card>
+                                  <Card title="I know TailwindCSS Effectively" icon={<IconBrandTailwind size={100} />}>
+                                    <CanvasRevealEffect
+                                      animationSpeed={5.1}
+                                      containerClassName="bg-blue-400"
+                                    />
+                                  </Card>
+                                  <Card title="" icon={<VscBlank size={100} />}>
+                                    <CanvasRevealEffect
+                                      animationSpeed={5.1}
+                                      containerClassName="bg-red-400"
+                                    />
+                                  </Card>
+                              </div>
+                              <div className="rounded-3xl p-4 m-4 flex flex-row backdrop-blur-2xl z-0">
+                                  <BackgroundGradient className="rounded-[22px] w-[15rem] h-[14rem] max-w-sm p-4 sm:p-10 flex flex-col justify-center items-center">
+                                    <GiServerRack size={100} color="white" />
+                                    <div className="text-2xl mt-4">Back-End Key Skills</div>
+                                    
+                                  
+                                  </BackgroundGradient>
+                                  <Card title="I know Express.Js Very Well" icon={<SiExpress size={100} />}>
+                                    <CanvasRevealEffect
+                                      animationSpeed={5.1}
+                                      containerClassName="bg-slate-300"
+                                    />
+                                  </Card>
+                                  <Card title="I Know Node.Js Very Well" icon={<FaNode size={100} />}>
+                                    <CanvasRevealEffect
+                                      animationSpeed={5.1}
+                                      containerClassName="bg-green-600"
+                                    />
+                                  </Card>
+                                  <Card title="I know REST API Very Well" icon={<AiFillApi size={100} />}>
+                                    <CanvasRevealEffect
+                                      animationSpeed={5.1}
+                                      containerClassName="bg-red-400"
+                                    />
+                                  </Card>
+                                  <Card title="I know Prisma Very Well" icon={<SiPrisma size={100} />}>
+                                    <CanvasRevealEffect
+                                      animationSpeed={5.1}
+                                      containerClassName="bg-green-400"
+                                    />
+                                  </Card>
+                                  <Card title="" icon={<VscBlank size={100} />}>
+                                    <CanvasRevealEffect
+                                      animationSpeed={5.1}
+                                      containerClassName="bg-red-400"
+                                    />
+                                  </Card>
+                              </div>
+                              <div className="rounded-3xl p-4 m-4 flex flex-row backdrop-blur-2xl z-0">
+                                  <BackgroundGradient className="rounded-[22px] w-[15rem] h-[14rem] max-w-sm p-4 sm:p-10 flex flex-col justify-center items-center">
+                                    <IconDatabaseCog size={100} color="white" />
+                                    <div className="text-2xl mt-4">DataBases</div>
+                                    
+                                  
+                                  </BackgroundGradient>
+                                  <Card title="I know MongoDB Very Well" icon={<SiMongodb size={100} />}>
+                                    <CanvasRevealEffect
+                                      animationSpeed={5.1}
+                                      containerClassName="bg-green-600"
+                                    />
+                                  </Card>
+                                  <Card title="I Know PostgreSQL Very Well" icon={<BiLogoPostgresql size={100} />}>
+                                    <CanvasRevealEffect
+                                      animationSpeed={5.1}
+                                      containerClassName="bg-cyan-700"
+                                    />
+                                  </Card>
+                                  <Card title="" icon={<VscBlank size={100} />}>
+                                    <CanvasRevealEffect
+                                      animationSpeed={5.1}
+                                      containerClassName="bg-red-400"
+                                    />
+                                  </Card>
+                                  <Card title="" icon={<VscBlank size={100} />}>
+                                    <CanvasRevealEffect
+                                      animationSpeed={5.1}
+                                      containerClassName="bg-red-400"
+                                    />
+                                  </Card>
+                                  <Card title="" icon={<VscBlank size={100} />}>
+                                    <CanvasRevealEffect
+                                      animationSpeed={5.1}
+                                      containerClassName="bg-red-400"
+                                    />
+                                  </Card>
+                                  
+                              </div>
+                              <div className="rounded-3xl p-4 m-4 flex flex-row backdrop-blur-2xl z-0">
+                                  <BackgroundGradient className="rounded-[22px] w-[15rem] h-[14rem] max-w-sm p-4 sm:p-10 flex flex-col justify-center items-center">
+                                    <FaConnectdevelop size={100} color="white" />
+                                    <div className="text-2xl mt-4">DevOps</div>
+                                    
+                                  
+                                  </BackgroundGradient>
+                                  <Card title="I know Docker Very Well" icon={<IconBrandDocker size={100} />}>
+                                    <CanvasRevealEffect
+                                      animationSpeed={5.1}
+                                      containerClassName="bg-blue-400"
+                                    />
+                                  </Card>
+                                  <Card title="I Know Kubernetes Very Well" icon={<SiKubernetes size={100} />}>
+                                    <CanvasRevealEffect
+                                      animationSpeed={5.1}
+                                      containerClassName="bg-cyan-700"
+                                    />
+                                  </Card>
+                                  <Card title="I Know Git Very Well" icon={<FaGitAlt size={100} />}>
+                                    <CanvasRevealEffect
+                                      animationSpeed={5.1}
+                                      containerClassName="bg-red-400"
+                                    />
+                                  </Card>
+                                  <Card title="I Know Linux Very Well" icon={<FaLinux size={100} />}>
+                                    <CanvasRevealEffect
+                                      animationSpeed={5.1}
+                                      containerClassName="bg-indigo-400"
+                                    />
+                                  </Card>
+                                  <Card title="" icon={<VscBlank size={100} />}>
+                                    <CanvasRevealEffect
+                                      animationSpeed={5.1}
+                                      containerClassName="bg-red-400"
+                                    />
+                                  </Card>
+                                  
+                              </div>
+                              <Link href="/home/skills">
+                              <button className="p-[3px] relative w-fit mt-10 ml-[4rem] mb-[8rem] text-base">
+                                <div className="absolute inset-0 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-lg" />
+                                <div className="px-8 py-2  bg-black rounded-[6px]  relative group transition duration-200 text-white hover:bg-transparent">
+                                View All Technologies I worked with
+                                </div>
+                              </button>
+                              </Link>
+                        </div>
+                      {/* Projects */}
+                        <div id="projects" className="text-2xl md:text-4xl font-bold dark:text-white w-full h-fit z-0">
+                          Highlighted Projects
+                          <div className="h-[80rem] w-full grid grid-cols-2 z-0" >
+                            <ProjectCard title="google.com" link="https://www.google.com" data={project1}/>
+                            <ProjectCard title="google.com" link="https://www.google.com" data={project1}/>
+                            <ProjectCard title="google.com" link="https://www.google.com" data={project1}/>
+                            <ProjectCard title="google.com" link="https://www.google.com" data={project1}/>
                           </div>
-                          <div className="rounded-3xl p-4 m-4 flex flex-row backdrop-blur-2xl">
-                              <BackgroundGradient className="rounded-[22px] w-[15rem] h-[14rem] max-w-sm p-4 sm:p-10 flex flex-col justify-center items-center">
-                                <IconStackFront size={100} color="white" />
-                                <div className="text-2xl mt-4">Front-End Key Skills</div>
-                                
-                              
-                              </BackgroundGradient>
-                              <Card title="I know React Very Well" icon={<IconBrandReact size={100} />}>
-                                <CanvasRevealEffect
-                                  animationSpeed={5.1}
-                                  containerClassName="bg-blue-700"
-                                />
-                              </Card>
-                              <Card title="I Know Next.Js Very Well" icon={<SiNextdotjs size={100} />}>
-                                <CanvasRevealEffect
-                                  animationSpeed={5.1}
-                                  containerClassName="bg-slate-900"
-                                />
-                              </Card>
-                              <Card title="I know Redux Very Well" icon={<IconBrandRedux size={100} />}>
-                                <CanvasRevealEffect
-                                  animationSpeed={5.1}
-                                  containerClassName="bg-purple-600"
-                                />
-                              </Card>
-                              <Card title="I know TailwindCSS Effectively" icon={<IconBrandTailwind size={100} />}>
-                                <CanvasRevealEffect
-                                  animationSpeed={5.1}
-                                  containerClassName="bg-blue-400"
-                                />
-                              </Card>
-                              <Card title="" icon={<VscBlank size={100} />}>
-                                <CanvasRevealEffect
-                                  animationSpeed={5.1}
-                                  containerClassName="bg-red-400"
-                                />
-                              </Card>
+                          <Link href="/home/projects">
+                          <button className="p-[3px] relative w-fit mt-10 mb-[8rem] ml-[4rem] text-base">
+                            <div className="absolute inset-0 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-lg" />
+                            <div className="px-8 py-2  bg-black rounded-[6px]  relative group transition duration-200 text-white hover:bg-transparent">
+                            View More Projects
+                            </div>
+                          </button>
+                          </Link>
+                        </div>
+                      {/* Experience */}
+                        <div id="experience" className="text-2xl md:text-4xl font-bold dark:text-white w-full">
+                          Experience Snapshot
+                          <div className="w-full ">
+                            <Experience />
                           </div>
-                          <div className="rounded-3xl p-4 m-4 flex flex-row backdrop-blur-2xl">
-                              <BackgroundGradient className="rounded-[22px] w-[15rem] h-[14rem] max-w-sm p-4 sm:p-10 flex flex-col justify-center items-center">
-                                <GiServerRack size={100} color="white" />
-                                <div className="text-2xl mt-4">Back-End Key Skills</div>
-                                
-                              
-                              </BackgroundGradient>
-                              <Card title="I know Express.Js Very Well" icon={<SiExpress size={100} />}>
-                                <CanvasRevealEffect
-                                  animationSpeed={5.1}
-                                  containerClassName="bg-slate-300"
-                                />
-                              </Card>
-                              <Card title="I Know Node.Js Very Well" icon={<FaNode size={100} />}>
-                                <CanvasRevealEffect
-                                  animationSpeed={5.1}
-                                  containerClassName="bg-green-600"
-                                />
-                              </Card>
-                              <Card title="I know REST API Very Well" icon={<AiFillApi size={100} />}>
-                                <CanvasRevealEffect
-                                  animationSpeed={5.1}
-                                  containerClassName="bg-red-400"
-                                />
-                              </Card>
-                              <Card title="I know Prisma Very Well" icon={<SiPrisma size={100} />}>
-                                <CanvasRevealEffect
-                                  animationSpeed={5.1}
-                                  containerClassName="bg-green-400"
-                                />
-                              </Card>
-                              <Card title="" icon={<VscBlank size={100} />}>
-                                <CanvasRevealEffect
-                                  animationSpeed={5.1}
-                                  containerClassName="bg-red-400"
-                                />
-                              </Card>
-                          </div>
-                          <div className="rounded-3xl p-4 m-4 flex flex-row backdrop-blur-2xl">
-                              <BackgroundGradient className="rounded-[22px] w-[15rem] h-[14rem] max-w-sm p-4 sm:p-10 flex flex-col justify-center items-center">
-                                <IconDatabaseCog size={100} color="white" />
-                                <div className="text-2xl mt-4">DataBases</div>
-                                
-                              
-                              </BackgroundGradient>
-                              <Card title="I know MongoDB Very Well" icon={<SiMongodb size={100} />}>
-                                <CanvasRevealEffect
-                                  animationSpeed={5.1}
-                                  containerClassName="bg-green-600"
-                                />
-                              </Card>
-                              <Card title="I Know PostgreSQL Very Well" icon={<BiLogoPostgresql size={100} />}>
-                                <CanvasRevealEffect
-                                  animationSpeed={5.1}
-                                  containerClassName="bg-cyan-700"
-                                />
-                              </Card>
-                              <Card title="" icon={<VscBlank size={100} />}>
-                                <CanvasRevealEffect
-                                  animationSpeed={5.1}
-                                  containerClassName="bg-red-400"
-                                />
-                              </Card>
-                              <Card title="" icon={<VscBlank size={100} />}>
-                                <CanvasRevealEffect
-                                  animationSpeed={5.1}
-                                  containerClassName="bg-red-400"
-                                />
-                              </Card>
-                              <Card title="" icon={<VscBlank size={100} />}>
-                                <CanvasRevealEffect
-                                  animationSpeed={5.1}
-                                  containerClassName="bg-red-400"
-                                />
-                              </Card>
-                              
-                          </div>
-                          <div className="rounded-3xl p-4 m-4 flex flex-row backdrop-blur-2xl">
-                              <BackgroundGradient className="rounded-[22px] w-[15rem] h-[14rem] max-w-sm p-4 sm:p-10 flex flex-col justify-center items-center">
-                                <FaConnectdevelop size={100} color="white" />
-                                <div className="text-2xl mt-4">DevOps</div>
-                                
-                              
-                              </BackgroundGradient>
-                              <Card title="I know Docker Very Well" icon={<IconBrandDocker size={100} />}>
-                                <CanvasRevealEffect
-                                  animationSpeed={5.1}
-                                  containerClassName="bg-blue-400"
-                                />
-                              </Card>
-                              <Card title="I Know Kubernetes Very Well" icon={<SiKubernetes size={100} />}>
-                                <CanvasRevealEffect
-                                  animationSpeed={5.1}
-                                  containerClassName="bg-cyan-700"
-                                />
-                              </Card>
-                              <Card title="I Know Git Very Well" icon={<FaGitAlt size={100} />}>
-                                <CanvasRevealEffect
-                                  animationSpeed={5.1}
-                                  containerClassName="bg-red-400"
-                                />
-                              </Card>
-                              <Card title="I Know Linux Very Well" icon={<FaLinux size={100} />}>
-                                <CanvasRevealEffect
-                                  animationSpeed={5.1}
-                                  containerClassName="bg-indigo-400"
-                                />
-                              </Card>
-                              <Card title="" icon={<VscBlank size={100} />}>
-                                <CanvasRevealEffect
-                                  animationSpeed={5.1}
-                                  containerClassName="bg-red-400"
-                                />
-                              </Card>
-                              
-                          </div>
-                    </div>
-                    <div id="projects" className="text-2xl md:text-4xl font-bold dark:text-white w-full border-yellow-400 border-4 h-fit">
-                      Highlighted Projects
-                    </div>
-                    <div id="experience" className="text-2xl md:text-4xl font-bold dark:text-white w-full border-purple-400 border-4 h-fit">
-                      Experience Snapshot
-                    </div>
-                    <div id="recommendations" className="text-2xl md:text-4xl font-bold dark:text-white w-full border-purple-400 border-4 h-fit">
-                      Recommendations
-                     
-
-                    </div>
+                          
+                        </div>
+                    
                     </div>
                     
                   </motion.div>
@@ -380,7 +587,8 @@ const page = () => {
               </div>
            
           </div>
-          <div className="bg-red-400 hidden md:block">
+        {/* Floating Dock */}
+          <div className="bg-red-400 hidden md:block z-99">
             <FloatingDockDemo />
           </div>
         </div>
@@ -480,14 +688,7 @@ function FloatingDockDemo() {
       ),
       href: "#experience",
     },
-    {
-      title: "Recommendations",
-      icon: (
-        <IconMessageFilled className="h-full w-full text-neutral-500 dark:text-neutral-300" />
-      ),
-      href: "#recommendations",
-    },
- 
+   
     {
       title: "Twitter",
       icon: (
@@ -511,7 +712,7 @@ function FloatingDockDemo() {
     }
   ];
   return (
-    <div className="fixed border-4 rounded-3xl bottom-5 right-[45rem] items-center justify-center w-fit">
+    <div className="fixed border-4 rounded-3xl bottom-5 right-[45rem] items-center justify-center w-fit z-[99]">
       <FloatingDock
         mobileClassName="translate-y-20" // only for demo, remove for production
         items={links}
@@ -519,5 +720,47 @@ function FloatingDockDemo() {
     </div>
   );
 }
+
+const ProjectCard = (
+  {
+    title,
+    link,
+    icon,
+    children,
+    data
+  }: {
+    title: string;
+    icon?: React.ReactNode;
+    link: string;
+    children?: React.ReactNode;
+    data: Array<any>;
+  }
+) => {
+  return (
+    
+      <PinContainer
+        title={title}
+        href={link}
+      >
+        <div className="flex basis-full flex-col p-4 tracking-tight text-slate-100/50 sm:basis-1/2 w-[40rem] h-[35rem] ">
+          <h3 className="max-w-xs !pb-2 !m-0 font-bold  text-base text-slate-100">
+            {title}
+          </h3>
+          <div className="text-base !m-0 !p-0 font-normal">
+            <span className="text-slate-500 ">
+              Customizable Tailwind CSS and Framer Motion Components.
+            </span>
+          </div>
+          <div className="flex flex-1 w-full rounded-lg mt-8 p-5 bg-gradient-to-br from-violet-500 via-purple-500 to-blue-500 h-[10rem]" />
+          <div className="w-full flex flex-row justify-between mt-4">
+            <div className="flex flex-row items-start w-full"><AnimatedTooltip items={data} /></div>
+            <div className="text-lg flex flex-row bg-violet-600 hover:bg-indigo-600 text-white rounded-2xl w-fit whitespace-nowrap my-auto p-3 hover:scale-110"><IconSend className="mr-4 my-auto" size={30} color="white"/> View Live</div>
+          </div>
+        </div>
+      </PinContainer>
+    
+  );
+}
+
 
 export default page
