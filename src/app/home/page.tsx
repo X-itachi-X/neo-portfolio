@@ -718,7 +718,7 @@ function FloatingDockDemo() {
     }
   ];
   return (
-    <div className="fixed border-4 rounded-3xl bottom-5 right-[45rem] items-center justify-center w-fit z-[99]">
+    <div className="fixed border-4 rounded-3xl bottom-5 right-[30vw] left-[35vw] items-center justify-center w-fit z-[99]">
       <FloatingDock
         mobileClassName="translate-y-20" // only for demo, remove for production
         items={links}
