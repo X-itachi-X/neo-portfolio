@@ -318,9 +318,9 @@ const page = () => {
                     
                     <div>
                       {/* key skills */}
-                        <div id="skills" className="text-2xl md:text-4xl font-bold dark:text-white h-fit w-full border-4">
+                        <div id="skills" className="text-2xl md:text-4xl font-bold dark:text-white h-fit w-full">
                           Key Skills
-                          <div className="border-4 border-red-400 w-fit xl:w-full items-center grid grid-cols-3 gap-4 md:gap-8 md:grid-cols-5 mx-auto xl:block">
+                          <div className="w-fit xl:w-full items-center grid grid-cols-3 md:gap-8 md:grid-cols-5 mx-auto xl:block">
                               <div className="rounded-3xl py-4 my-4 xl:p-4 xl:m-4 flex flex-col xl:flex-row backdrop-blur-2xl z-0">
                                   <BackgroundGradient className="rounded-[22px] w-fit mx-auto xl:w-[15rem] h-[10rem] xl:h-[14rem] max-w-sm flex flex-col justify-center items-center">
                                     <IconFileCode2 size={100} color="white" />
